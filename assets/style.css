@@ -1,0 +1,15 @@
+
+body{
+    background-color: red;/* couleur de fond*/
+}
+
+h1{
+    text-transform: uppercase;/*mettre tout en majuscule*/
+    letter-spacing: 3px; /*l'espace entre les caractères*/
+    text-align: center; /*pour centrer le texte*/
+    font-size: 2.5rem; /* taille de la police  NB: les tailles de polices doivent être en REM */
+    /*NB: 1rem = 16px; rem s'adapte mieu à tous les écran ...*/
+    text-shadow: 3px 3px 8px #00000042;/* pour créer l'ombre, le shadow doit avoir trois valeurs + l'opacité */
+    color: rgba(100, 28, 168, 0.897);
+    text-decoration: underline;/*pour souligner le text */
+}
