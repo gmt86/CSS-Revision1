@@ -5,6 +5,14 @@
     src: url("./fonts/Oswald/Oswald-VariableFont_wght.ttf");
 }
 
+/* * l'étoile donne du style à tous les éléments */
+/* *{
+    margin: 0; pour reinitialiser tous les marges extérieurs
+    padding: 0; pour reinitialiser tous les marges intérieurs
+} */
+
+/* NB: il faut toujours crée les éléments css en suivant leur ordre dans le html */
+
 body{
     /* background-color: red;couleur de fond */
     font-family : "DMSerif",Verdana, Geneva, Tahoma, sans-serif;
@@ -12,7 +20,7 @@ body{
     /* vh: signifie viewport heigth, pour aussi éviter que l'image se repète */
     min-height: 100vh; /* min-height : hauteur minimal, pour dire que l'image face 100% de la taille de l'ecran d'utilisateur*/
     /* astuce: utilser min-heigth au lieu de heigth pour éviter des supprises déagréable lorsque les tailles d'écran varies */
-    
+    /* VH , WH pour les tailles d'écran */
 }
 
 h1{
@@ -26,4 +34,29 @@ h1{
     text-decoration: underline;/*pour souligner le text */
     font-family: 'DMSerif',sans-serif; /*si la police Oswald n'est pas trouvée alors 'sans-serif' est automatiquement chargée */
 
+}
+
+/* ici nous allons mettre en forme nos 4 boites à savoir: main,boite1,boite2,boite3 */
+
+main{   /*mise en forme du parent */
+    height: 500px; /* il faut pas utliser le % sur les hauteurs */
+    width: 90%;  /* conseiller de mettre les largeurs en % */
+    background: rgba(245, 245, 245, 0.9);
+    /* centrer une boite */
+    margin: 0 auto; /* ce qui signifie: haut =0, bas =0, gauche=auto, droite = auto */
+    /* équivaut a ceci : margin: 0 0 auto auto; */
+    /* margin: = écart exterieur
+       padding: = écart intérieur */
+    border: 2px solid rgba(0, 140, 255, 0.781);/*pour les bordures */
+    border-radius: 20px; /*pour arrondir tous les bordures */
+    /* border-radius: 20px 0 ;
+       border-radius: 20px 20px 0 20px; */
+    box-shadow: 0px 0px 20px 4px #81cfc6;   /*pour créer l'ombre */
+    padding: 15px;/* 15px en haut,bas,gauche,droite */
+
+}
+
+h2{
+    margin: 0; /* pour enlever tous les marge appliquée sur le H2 */
+    
 }
