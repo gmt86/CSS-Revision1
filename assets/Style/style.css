@@ -1,0 +1,29 @@
+
+
+@font-face {
+    font-family: "DMSerif";
+    src: url("./fonts/Oswald/Oswald-VariableFont_wght.ttf");
+}
+
+body{
+    /* background-color: red;couleur de fond */
+    font-family : "DMSerif",Verdana, Geneva, Tahoma, sans-serif;
+    background: url("../img/bg.jpg") center/cover;
+    /* vh: signifie viewport heigth, pour aussi éviter que l'image se repète */
+    min-height: 100vh; /* min-height : hauteur minimal, pour dire que l'image face 100% de la taille de l'ecran d'utilisateur*/
+    /* astuce: utilser min-heigth au lieu de heigth pour éviter des supprises déagréable lorsque les tailles d'écran varies */
+    
+}
+
+h1{
+    text-transform: uppercase;/*mettre tout en majuscule*/
+    letter-spacing: 3px; /*l'espace entre les caractères*/
+    text-align: center; /*pour centrer le texte*/
+    font-size: 2.5rem; /* taille de la police  NB: les tailles de polices doivent être en REM */
+    /*NB: 1rem = 16px; rem s'adapte mieu à tous les écran ...*/
+    text-shadow: 3px 3px 8px #00000042;/* pour créer l'ombre, le shadow doit avoir trois valeurs + l'opacité */
+    color: rgba(100, 28, 168, 0.897);
+    text-decoration: underline;/*pour souligner le text */
+    font-family: 'DMSerif',sans-serif; /*si la police Oswald n'est pas trouvée alors 'sans-serif' est automatiquement chargée */
+
+}
