@@ -10,8 +10,9 @@
     <header>
         <h1>Les bases de CSS</h1>
     </header>  
-    
+    <!-- ici le corps de notre page -->
     <main> 
+        <!-- premier block  qui est le flexbox -->
 
         <div class="flexbox">
             <h2>Flexbox</h2>
@@ -20,6 +21,26 @@
                 <li>boite 2</li>
                 <li>boite 3</li>                
             </ul>
+        </div>        
+        <!-- deuxième block qui est une Grid -->
+        <div class="grid">
+            <!-- notre Grid à deux éléments, à savoir une image à gauche et un formulaire à droite -->
+            <h2>Gris</h2>
+            <!-- div image à gauche  -->
+            <div class="grid-container">
+                <img src="./assets/img/CSS3_logo.png" alt="logo css">
+            </div>
+            <!-- Div formulaire à droite -->
+            <form action="">
+                <input type="text" id="firstname" placeholder="Prénom">
+                <input type="text" id="lastname" placeholder="Nom">
+                <textarea id="" 
+                        cols="30" 
+                        rows="10" 
+                        placeholder="Ici votre méssage">
+                </textarea>
+                <input type="submit" value="Valider">
+            </form>
         </div>
 
     </main>
