@@ -60,3 +60,33 @@ h2{
     margin: 0; /* pour enlever tous les marge appliquée sur le H2 */
     
 }
+
+.flexbox{
+    border: 2px solid skyblue; /* dashed: pour les pointiés */
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;    
+}
+
+/*FlexBox NB: le but ici est de repartir équitablement les trois boîtes de facon horizontale */
+
+.flexbox ul{
+    padding: 0;
+    display: flex; /*pour alignement horizontale des éléments de ul */
+    justify-content: space-around; /* pour cetrer de facon équitable  inspecter sur le navigateur pour mieu voir*/
+   
+}
+
+.flexbox li{
+    list-style: none; /*pour enlever les puces sur les Lists */
+    height: 160px;
+    width: 160px;
+    margin: 10px;
+    background: turquoise;
+     /*centrer un unique élément horizontalement et verticalement */
+     /*par exemple les trois ci-dessous vont centré les textes des <li> à savoir boite1,boite2, boite3 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
