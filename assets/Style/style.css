@@ -6,10 +6,12 @@
 }
 
 /* * l'étoile donne du style à tous les éléments */
-/* *{
-    margin: 0; pour reinitialiser tous les marges extérieurs
-    padding: 0; pour reinitialiser tous les marges intérieurs
-} */
+ *{
+     margin: 0; /*pour reinitialiser tous les marges extérieurs */
+     padding: 0; /*pour reinitialiser tous les marges intérieurs */
+    border: 2px solid red; /*pour voir l'ensemble des cardres sur le navigateur */
+    
+} 
 
 /* NB: il faut toujours crée les éléments css en suivant leur ordre dans le html */
 
