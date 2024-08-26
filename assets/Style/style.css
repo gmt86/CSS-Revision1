@@ -61,7 +61,8 @@ h2{
     
 }
 
-.flexbox{
+.flexbox, 
+.Grid{
     border: 2px solid skyblue; /* dashed: pour les pointiés */
     border-radius: 10px;
     padding: 10px;
@@ -88,5 +89,74 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/*GRID */
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 30% 70%; /*pour diviser la Grid en deux colonnes 30% pour l'image et 70% pour le Formulaire */
+
+}
+
+.Grid img{
+    width: 80%; /* l'image prend 80% de son parent 
+                    son parent étant grid-container
+                    donc 80% de 30% parceque grid-container 
+                    occupe 30% de Grid*/
+    margin: 20px,auto;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;/* divise le formulaire en 2 fractions, NB: 1fr ==une fraction */
+    grid-template-rows: 1fr 1fr 1fr;/*divise en 3lignes, 1pour nom & prénom; 1pour textarea; 1pour le bouton valider */
+    /*NB: au stade ci-dessus c'est bien visiblle quand on inspecte sur le navigateur pour voir comment le formulaire 
+    est bien subdiviser en 2colonnes et 3lignes */
+    grid-template-areas:  /*définition des différentes zones de la Grid */
+    "i1 i2"     /*pour input 1 et 2 */
+    "ta ta"     /*pour Textarea, */
+    "vi tb";    /* vi pour vide et bt pour bouton */
+                /*RQ : les deux premières cases correspondent aux inputs
+                les deux deuxièmes aux textarea
+                les deux derniers aux vide et bouton valider */
     
 }
+
+input, textarea{ /* pour donner du style aux inputs et textarea */
+    margin: 5px;
+    border: 1px solid darkblue;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-family: "DMSerif";
+    border-radius: 5px; /*petit arrondir des bords sur les inputs et textarea */
+
+}
+
+textarea{ /* c'est le seul textarea de ma page */
+    grid-area: ta;  /* pour repositionner le textarea au bon endroit dans la grid 
+                        c'est à dire en deuxième position comme indiqué dans le form */
+    height: 40px;
+    resize: none;/*empeche le redimentionnement de la textarea */
+
+}
+
+/*NB: pour pointer les éléments HTML
+      . pour la classe
+     rien: pour les éléments classique comme textarea, form et autres
+     # : pour un Id  */   
+
+#btn-submit{
+    grid-area: tb;
+    cursor: pointer;
+    background: cyan;
+    transition: 0.2s; /*transition au survol de la souris */
+
+}
+
+#btn-submit:hover{
+    background: darkblue;
+    color: white; /*couleur du texte quand on survol le bouton */
+
+}
+
