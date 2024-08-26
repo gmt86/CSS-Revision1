@@ -27,7 +27,8 @@ h1{
     text-transform: uppercase;/*mettre tout en majuscule*/
     letter-spacing: 3px; /*l'espace entre les caractères*/
     text-align: center; /*pour centrer le texte*/
-    font-size: 2.5rem; /* taille de la police  NB: les tailles de polices doivent être en REM */
+    font-size: 10wh; /* 10% de la taille de l'écran, donc s'adapte à la taille de l'écran */
+    /* font-size: 2.5rem;  taille de la police  NB: les tailles de polices doivent être en REM */
     /*NB: 1rem = 16px; rem s'adapte mieu à tous les écran ...*/
     text-shadow: 3px 3px 8px #00000042;/* pour créer l'ombre, le shadow doit avoir trois valeurs + l'opacité */
     color: rgba(100, 28, 168, 0.897);
@@ -39,7 +40,7 @@ h1{
 /* ici nous allons mettre en forme nos 4 boites à savoir: main,boite1,boite2,boite3 */
 
 main{   /*mise en forme du parent */
-    height: 500px; /* il faut pas utliser le % sur les hauteurs */
+    min-height: 500px; /* il faut pas utliser le % sur les hauteurs */
     width: 90%;  /* conseiller de mettre les largeurs en % */
     background: rgba(245, 245, 245, 0.9);
     /* centrer une boite */
@@ -108,6 +109,8 @@ h2{
                     donc 80% de 30% parceque grid-container 
                     occupe 30% de Grid*/
     margin: 20px,auto;
+    display: block; /*ce qui veut dire que l'image occupe tout l'espace dans la largeur disponible */
+
 }
 
 form{
@@ -119,7 +122,7 @@ form{
     grid-template-areas:  /*définition des différentes zones de la Grid */
     "i1 i2"     /*pour input 1 et 2 */
     "ta ta"     /*pour Textarea, */
-    "vi tb";    /* vi pour vide et bt pour bouton */
+    "vi bt";    /* vi pour vide et bt pour bouton */
                 /*RQ : les deux premières cases correspondent aux inputs
                 les deux deuxièmes aux textarea
                 les deux derniers aux vide et bouton valider */
@@ -150,7 +153,7 @@ textarea{ /* c'est le seul textarea de ma page */
      # : pour un Id  */   
 
 #btn-submit{
-    grid-area: tb;
+    grid-area: bt;
     cursor: pointer;
     background: cyan;
     transition: 0.2s; /*transition au survol de la souris */
@@ -218,3 +221,45 @@ textarea{ /* c'est le seul textarea de ma page */
     bottom:  -20px;  
     right: -20px;  
 }
+
+/*RESPONSSIVE : pour adapter le contenu de la page par rapport à la taille de l'écran */
+@media screen and (max-width:900px) {
+    body{ /*en dessous de 900px alors change le fond d'écran */
+        background: red;
+    }
+    
+    .grid-container{
+        display: block; /*tu place les éléments du grid-container en block, c'est à dire les uns au dessus des autres */
+    }
+
+    .grid-container img{
+        width: 40%;
+    }
+
+} 
+
+@media screen and (max-width:610px) {
+    body{ /*en dessous de 900px alors change le fond d'écran */
+        background: rgba(17, 21, 22, 0.842);
+    }
+    
+    .flexbox ul{
+        flex-direction: column; /*pour mettre le li en colonne */
+        align-items: center;
+    }
+
+    form{
+        grid-template-columns: 1fr;/*mettre le formulaire en 1 fraction */
+        grid-template-rows: repeat(4,1fr); /* repete 4lignes de 1fraction */
+        grid-template-areas: 
+        "i1"
+        "i2"
+        "ta"
+        "bt";
+    }
+
+    input, textarea {
+        font-size: 0.8rem;
+    }
+    
+} 
